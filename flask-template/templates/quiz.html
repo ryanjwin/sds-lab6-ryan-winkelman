@@ -6,7 +6,6 @@
     <body>
         <h1>Here is the quiz!</h1>
         <form method="POST" action="/results">
-            <input type="submit" value="Take the quiz!"/>
             {% for state in states %}
                 <p>Enter the capital for {{ state }}</p>
                 <input type="text" name={{ state }} placeholder="Enter your answer here"/>
