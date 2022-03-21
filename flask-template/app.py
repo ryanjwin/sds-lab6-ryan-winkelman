@@ -16,9 +16,9 @@
 # -- Import section --
 from flask import Flask
 from flask import render_template
-from flask import request
+from flask import request, redirect
 from state_info import capitals
-
+from model import grade_answers
 # -- Initialization section --
 app = Flask(__name__)
 
@@ -33,3 +33,16 @@ def index():
 def quiz():
     states = capitals.keys()
     return render_template('quiz.html', states=states)
+
+@app.route('/results', methods=['GET', 'POST'])
+def results():
+    if request.method == 'GET':
+        redirect('/')
+    # take in answers and build dictionary
+    guesses = {}
+    states = capitals.keys()
+    for state in states:
+        if len(request.form[state]) > 0:
+            guesses[state] = request.form[state]
+    answers = grade_answers(guesses)
+    return render_template('results.html', answers=answers)

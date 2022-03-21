@@ -1,0 +1,12 @@
+<html>
+    <head>
+        <title>Flask Template</title>
+        <link rel="stylesheet" href="../static/css/style.css">
+    </head>
+    <body>
+        <h1>Here are your results!</h1>
+        {% for answer, correct in answers.items() %}
+            <p>You got {{ answer }} {{ correct }}</p>
+        {% endfor %}
+    </body>
+</html>
