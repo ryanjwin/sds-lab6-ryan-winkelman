@@ -12,3 +12,16 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+from state_info import capitals
+
+def grade_answers(guesses):
+    '''
+    
+    '''
+    results = dict()
+    for state, guess in guesses.items():
+        if capitals[state].lower() == guess.lower():
+            results[state] = True
+        else:
+            results[state] = False
+    return results
