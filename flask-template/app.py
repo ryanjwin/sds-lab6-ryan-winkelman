@@ -26,5 +26,9 @@ app = Flask(__name__)
 # -- Routes section --
 @app.route('/')
 @app.route('/index')
-def index(name = None):
-    return render_template('index.html', name = name)
+def index():
+    return render_template('index.html')
+
+@app.route('/quiz', methods=['GET', 'POST'])
+def quiz():
+    return "quiz"
