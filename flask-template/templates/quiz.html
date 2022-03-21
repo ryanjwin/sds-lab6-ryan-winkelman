@@ -8,7 +8,7 @@
         <form method="POST" action="/results">
             <input type="submit" value="Take the quiz!"/>
             {% for state in states %}
-            <input type="text" name={%state%} placeholder="Enter the capital of {%state%}"/>
+                <p>Enter the capital for {{ state }}</p>
             {% endfor %}
 
         </form>
