@@ -17,7 +17,7 @@
 from flask import Flask
 from flask import render_template
 from flask import request
-
+from state_info import capitals
 
 # -- Initialization section --
 app = Flask(__name__)
@@ -31,4 +31,5 @@ def index():
 
 @app.route('/quiz', methods=['GET', 'POST'])
 def quiz():
-    return "quiz"
+    states = capitals.values()
+    return render_template('quiz.html', states=states)

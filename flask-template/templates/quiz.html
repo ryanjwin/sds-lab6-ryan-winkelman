@@ -1,0 +1,16 @@
+<html>
+    <head>
+        <title>Flask Template</title>
+        <link rel="stylesheet" href="../static/css/style.css">
+    </head>
+    <body>
+        <h1>Here is the quiz!/h1>
+        <form method="POST" action="/results">
+            <input type="submit" value="Take the quiz!"/>
+            {% for state in states %}
+            <input type="text" name={%state%} placeholder="Enter the capital of {%state%}"/>
+            {% endfor %}
+
+        </form>
+    </body>
+</html>
