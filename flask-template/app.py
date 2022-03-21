@@ -42,7 +42,7 @@ def results():
     guesses = {}
     states = capitals.keys()
     for state in states:
-        if len(request.form[state]) > 0:
-            guesses[state] = request.form[state]
+        if len(request.form[state.split()[0]]) > 0:
+            guesses[state] = request.form[state.split()[0]]
     answers = grade_answers(guesses)
     return render_template('results.html', answers=answers)
