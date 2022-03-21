@@ -31,5 +31,5 @@ def index():
 
 @app.route('/quiz', methods=['GET', 'POST'])
 def quiz():
-    states = capitals.values()
+    states = capitals.keys()
     return render_template('quiz.html', states=states)
