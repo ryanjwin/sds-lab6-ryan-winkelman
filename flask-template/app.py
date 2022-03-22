@@ -12,6 +12,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+
+# Lab 6 Partners:
+
+# Ryan Winkelman
+# Hiram Lopez
+
+
 # ---- YOUR APP STARTS HERE ----
 # -- Import section --
 from flask import Flask
