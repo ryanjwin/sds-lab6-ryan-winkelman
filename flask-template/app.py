@@ -45,4 +45,4 @@ def results():
         if len(request.form[''.join(state.split())]) > 0:
             guesses[state] = request.form[''.join(state.split())]
     answers = grade_answers(guesses)
-    return render_template('results.html', answers=answers)
+    return render_template('results.html', answers=answers, capitals=capitals)

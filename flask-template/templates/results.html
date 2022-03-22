@@ -6,7 +6,15 @@
     <body>
         <h1>Here are your results!</h1>
         {% for answer, correct in answers.items() %}
-            <p>You got {{ answer }} {{ correct }}</p>
+            {% if correct %}
+                <p>Congratulations! You got the capital for {{ answer }} correct!</p>
+            {% else %}
+                <p>Sorry! You got the capital for {{ answer }} wrong.  It is actually {{ capitals[answer] }}</p>
+            {% endif %}
         {% endfor %}
+    
+        <form method="POST" action="/quiz">
+            <input type="submit" value="Take the quiz again"/>
+        </form>
     </body>
 </html>
