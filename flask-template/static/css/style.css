@@ -14,3 +14,19 @@
  * limitations under the License.
  */
 
+body {
+    background-color: cornflowerblue;
+}
+.questions {
+    column-count: 5;
+    column-gap: 40px;
+    column-width: 80px;
+}
+h1 {
+    text-align: center;
+    color: white;
+}
+.turn-in {
+    padding: 40px;
+    justify-content: center;
+}
